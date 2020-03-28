@@ -21,5 +21,6 @@ The main server function takes 3 parameters :
                           ,axis_category= reactive ("country")
                           ,axis_numeric =  reactive("pop"))
 ```
-The function is returning selected category value (that can be used later in the app )
-On double click selected value is set to "*" 
+The function is returning selected category value (that can be used later in the app ).
+
+On double click selected value is set to " * " and all the categories values are selected in the interactive plot.
