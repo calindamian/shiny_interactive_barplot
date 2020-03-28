@@ -14,4 +14,12 @@ The main server function takes 3 parameters :
   - tb  : tibble or dataframe containing attributes to be displayed
   - axis_category : attribute used for category axis
   - axis_numeric  : attribute used for numeric axis. The categories are ordered based on values of this attribute
-  
+
+```
+    selected = callModule(interactive_barplot , "test" 
+                          ,tb =reactive (tb_result) 
+                          ,axis_category= reactive ("country")
+                          ,axis_numeric =  reactive("pop"))
+```
+The function is returning selected category value (that can be used later in the app )
+On double click selected value is set to "*" 
