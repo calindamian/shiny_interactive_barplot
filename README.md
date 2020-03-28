@@ -9,12 +9,7 @@ A demo could be seen in action https://calindamian.shinyapps.io/interactive_barp
 Data from gapeminder was used.
 
 # Usage
-The code for the demo : ***interactive_barplot_ui_demo.R*** 
+Files 
+  -  ***interactive_barplot_ui_demo.R*** : contains the demo showing how to use the module.
+  -  ***interactive_barplot.R*** : contains code for the module
 
-The code for the module : ***interactive_barplot.R*** 
-
-callModule(interactive_barplot , "test" 
-                          ,tb =reactive (tb_result) 
-                          ,axe_category= reactive ("country")
-                          ,axe_numeric =  reactive("pop"))
-                          
