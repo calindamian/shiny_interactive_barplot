@@ -1,2 +1,4 @@
-# shiny_interactive_barplot
-shiny module implementing interactive barplot selector 
+# Shiny interactive barplot
+Shiny module implementing interactive barplot selector 
+
+
