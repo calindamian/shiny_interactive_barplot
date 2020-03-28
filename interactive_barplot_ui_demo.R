@@ -52,8 +52,8 @@ server <- function(input, output , session) {
   
     selected = callModule(interactive_barplot , "test" 
                           ,tb =reactive (tb_result) 
-                          ,axe_category= reactive ("country")
-                          ,axe_numeric =  reactive("pop"))
+                          ,axis_category= reactive ("country")
+                          ,axis_numeric =  reactive("pop"))
     
     output$debug = renderText( str_c( "Selected Countries: " , selected ()))
     

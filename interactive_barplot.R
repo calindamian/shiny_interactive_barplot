@@ -21,7 +21,7 @@ interactive_barplot_ui = function(id) {
 }
 
 #Define module server function
-interactive_barplot = function(input, output, session , tb , axe_category , axe_numeric) {
+interactive_barplot = function(input, output, session , tb , axis_category , axis_numeric) {
     
 
     global = reactiveValues(selected_country = "*" )
@@ -30,9 +30,9 @@ interactive_barplot = function(input, output, session , tb , axe_category , axe_
     observeEvent(eventExpr = input$plot_click, {
         global$selected_country =  tb ()  %>% 
             ungroup()%>% 
-            arrange(.data[[axe_numeric()]])%>%
+            arrange(.data[[axis_numeric()]])%>%
             filter (row_number() == round (input$plot_click$y) ) %>% 
-            select (.data[[axe_category()]])%>%
+            select (.data[[axis_category()]])%>%
             pull()
     })
     
@@ -43,8 +43,8 @@ interactive_barplot = function(input, output, session , tb , axe_category , axe_
     
     output$ggplot <- renderPlot(
             tb () %>% 
-            mutate(selected = ifelse(.data[[axe_category ()]] %in% global$selected_country | global$selected_country == "*", "yes" , "no" ) )%>%
-              ggplot(aes ( reorder (.data[[axe_category ()]]  , .data[[axe_numeric ()]]) ,  .data[[axe_numeric()]] , fill=selected)) +
+            mutate(selected = ifelse(.data[[axis_category ()]] %in% global$selected_country | global$selected_country == "*", "yes" , "no" ) )%>%
+              ggplot(aes ( reorder (.data[[axis_category ()]]  , .data[[axis_numeric ()]]) ,  .data[[axis_numeric()]] , fill=selected)) +
               geom_bar(stat = "Identity") +
               scale_y_continuous(breaks  = NULL) +
               labs (x=NULL , y=NULL) +
