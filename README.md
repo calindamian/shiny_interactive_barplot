@@ -10,3 +10,8 @@ Files
   -  ***interactive_barplot_ui_demo.R*** : contains the demo showing how to use the module.
   -  ***interactive_barplot.R*** : contains code for the module
 
+The main server function takes 3 parameters :
+  - tb  : tibble or dataframe containing attributes to be displayed
+  - axis_category : attribute used for category axis
+  - axis_numeric  : attribute used for numeric axis. The categories are ordered based on values of this attribute
+  
